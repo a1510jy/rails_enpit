@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.2.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: tRcnuhLJKxfPy4rsoj4RtMec2C0iRR68J4U0LeOX5FIiVoCp3fFNmWjyt88lzHEa+RnUhZ1Zvxz+fboyVYpqsOfDM9W01Durr81ZXxfhdVHQtErkXAo2fjFFYL95a9LqN/A+dplrsPe6sGV4l1TVPEysTs4h0O7tpTS8ZfVCLpCBT0T5p9b/JGM6BzVWEKY2I/KVwyKlRWKRCbe1F39B2KUnT5n98UfH8LJKCmKdjkrlOZJ/4lS4U3lcAnKNC7MQ1J0wHsPsHc6mr/nZLlQb0aK7SAglhVZk4qZVskUW7P+GDb9H7OE5El5le4CrELlyh6l61aYBIpX1cZ0eu4pl/h9zK1rFyg0tRUGd1sdVKQRpMBVKY5UVOsK6hCJPwq5CBDKamLwIXR/CXlF3lAih8Zy06XkLrJdybBbkPSbZ2xxxxo0VFqEKALfeD7GjKDe0IHiGw5Ly9Tra9m6bOKCGDap7ySNq2EVXKXfLexXjgLKfJ8Pap78dWXcxfj0ZLbOAweN12ig08cAvUD1hTgwZoKScF2VC4XvW9juuSrjVT3SGQBIov6hPq7qfUJtejCJL69CuPZWlPBmzrCfsY+MNUbTvr3nlu/0Uk4gd7KxAPwOy13X0fye3gsrCP8IVIbwIndIbbU69uKgG1maXaDKiRDTevd5Z2gLVR9r7NErZW68=
+  app: aqueous-sea-1354
+  on:
+    repo: a1510jy/rails_enpit
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+ 
