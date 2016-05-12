@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require bootstrap
+ *= require bootstrap_override
  *= require bootstrap-social
  *= require font-awesome
  *= require_self
