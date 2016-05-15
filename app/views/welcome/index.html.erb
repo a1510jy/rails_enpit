@@ -4,3 +4,17 @@
   The time is now: <%= Time.now.localtime("+09:00") %>
 </p>
 
+
+<div class="modal fade" id="termCheck" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe src="/terms.html" style="zoom:0.60" width="99.6%" height="500"></iframe>
+        <div class="checkbox">
+          <label><input type="checkbox" id="agreeCheckBox" value="" checked>Agree</label>
+        </div>
+        <%= button_to 'OK', root_path, id: 'okButton', class: 'btn btn-success btn-block' %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
